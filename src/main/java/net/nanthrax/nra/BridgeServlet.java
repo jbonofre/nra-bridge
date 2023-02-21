@@ -25,7 +25,7 @@ public class BridgeServlet extends HttpServlet {
             KeyManager[] keyManagers = keyManagerFactory.getKeyManagers();
 
             KeyStore trustStore = KeyStore.getInstance("JKS");
-            trustStore.load(new FileInputStream("opt/karaf/etc/keystores/RNAclient-keystore.jks"), "rnarna".toCharArray());
+            trustStore.load(new FileInputStream("/opt/karaf/etc/keystores/RNAclient-keystore.jks"), "rnarna".toCharArray());
             TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init(trustStore);
             TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
