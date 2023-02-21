@@ -1,29 +1,16 @@
 package net.nanthrax.nra;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.apache.karaf.minho.boot.spi.Service;
-
 import javax.net.ssl.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URL;
 import java.security.KeyStore;
 import java.security.SecureRandom;
-import java.util.Properties;
 
-public class BridgeServlet extends HttpServlet implements Service {
-
-    @Override
-    public String name() {
-        return "nra-bridge";
-    }
-
-    @Override
-    public int priority() {
-        return DEFAULT_PRIORITY - 1;
-    }
+public class BridgeServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -89,10 +76,4 @@ public class BridgeServlet extends HttpServlet implements Service {
         }
     }
 
-    @Override
-    public Properties properties() {
-        Properties properties = new Properties();
-        properties.setProperty("contextPath", "/nra/*");
-        return properties;
-    }
 }
