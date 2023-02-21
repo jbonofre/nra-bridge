@@ -1,4 +1,4 @@
-package net.nanthrax.nra;
+package net.nanthrax.rna;
 
 import javax.net.ssl.*;
 import javax.servlet.ServletException;
@@ -15,13 +15,13 @@ public class BridgeServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String uri = request.getRequestURI();
-        String id = uri.substring("/nra/".length());
+        String id = uri.substring("/rna/".length());
         StringBuilder builder = new StringBuilder();
 
         try {
             KeyStore clientStore = KeyStore.getInstance("JKS");
             KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-            keyManagerFactory.init(clientStore, "rna".toCharArray());
+            keyManagerFactory.init(clientStore, "rnarna".toCharArray());
             KeyManager[] keyManagers = keyManagerFactory.getKeyManagers();
 
             KeyStore trustStore = KeyStore.getInstance("JKS");

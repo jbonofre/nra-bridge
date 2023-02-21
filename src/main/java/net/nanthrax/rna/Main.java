@@ -1,6 +1,5 @@
-package net.nanthrax.nra;
+package net.nanthrax.rna;
 
-import org.eclipse.jetty.server.HttpConnectionFactory;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -26,11 +25,11 @@ public class Main {
         servlets.setContextPath("/");
         server.setHandler(servlets);
 
-        servlets.addServlet(BridgeServlet.class, "/nra/*");
+        servlets.addServlet(BridgeServlet.class, "/rna/*");
 
         server.start();
 
-        System.out.println("NRA bridge started and listening on 0.0.0.0:8080/nra");
+        System.out.println("NRA bridge started and listening on 0.0.0.0:8080/rna");
     }
 
 }
